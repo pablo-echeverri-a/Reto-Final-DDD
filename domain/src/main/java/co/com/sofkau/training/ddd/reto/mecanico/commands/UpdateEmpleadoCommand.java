@@ -9,19 +9,25 @@ import co.com.sofkau.training.ddd.reto.values.DocumentoIdentidad;
 import co.com.sofkau.training.ddd.reto.values.NombrePersona;
 
 public class UpdateEmpleadoCommand extends Command {
+    private final MecanicoId mecanicoId;
     private final EmpleadoId empleadoId;
     private final NombrePersona nombre;
     private final DocumentoIdentidad documentoIdentidad;
     private final Activo activo;
     private final Codigo codigo;
 
-    public UpdateEmpleadoCommand(EmpleadoId empleadoId, NombrePersona nombre,
+    public UpdateEmpleadoCommand(MecanicoId mecanicoId, EmpleadoId empleadoId, NombrePersona nombre,
                                 DocumentoIdentidad documentoIdentidad, Activo activo, Codigo codigo) {
+        this.mecanicoId = mecanicoId;
         this.empleadoId = empleadoId;
         this.nombre = nombre;
         this.documentoIdentidad = documentoIdentidad;
         this.activo = activo;
         this.codigo = codigo;
+    }
+
+    public MecanicoId getMecanicoId() {
+        return mecanicoId;
     }
 
     public EmpleadoId getEmpleadoId() {

@@ -11,6 +11,8 @@ import co.com.sofkau.training.ddd.reto.factura.identities.FacturaId;
 import co.com.sofkau.training.ddd.reto.factura.identities.ManoObraId;
 import co.com.sofkau.training.ddd.reto.factura.values.Costo;
 import co.com.sofkau.training.ddd.reto.factura.values.Horas;
+import co.com.sofkau.training.ddd.reto.mecanico.events.ChangedEspecialidad;
+import co.com.sofkau.training.ddd.reto.mecanico.values.Especialidad;
 
 import java.util.List;
 
@@ -37,6 +39,10 @@ public class Factura extends AggregateEvent<FacturaId> {
 
     public void updateManoObra(ManoObraId manoObraId, Horas horas, Costo costo){
         appendChange(new UpdatedManoObra(manoObraId, horas, costo)).apply();
+    }
+
+    public void changeEspecialidad(Especialidad especialidad){
+        appendChange(new ChangedEspecialidad(especialidad)).apply();
     }
 
     public void addRepuesto(RepuestoFactory repuestoFactory){

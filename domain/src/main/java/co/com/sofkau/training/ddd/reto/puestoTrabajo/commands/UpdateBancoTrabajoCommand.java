@@ -1,21 +1,26 @@
 package co.com.sofkau.training.ddd.reto.puestoTrabajo.commands;
 
 import co.com.sofka.domain.generic.Command;
-import co.com.sofkau.training.ddd.reto.puestoTrabajo.PuestoTrabajo;
 import co.com.sofkau.training.ddd.reto.puestoTrabajo.identities.BancoTrabajoId;
 import co.com.sofkau.training.ddd.reto.puestoTrabajo.identities.PuestoTrabajoId;
 import co.com.sofkau.training.ddd.reto.puestoTrabajo.values.NumeroBanco;
 import co.com.sofkau.training.ddd.reto.puestoTrabajo.values.Sector;
 
-public class UpdateBancoTrabajo extends Command {
+public class UpdateBancoTrabajoCommand extends Command {
+    private final PuestoTrabajoId puestoTrabajoId;
     private final BancoTrabajoId bancoTrabajoId;
-    private final NumeroBanco NumeroBanco;
+    private final NumeroBanco numeroBanco;
     private final Sector sector;
 
-    public UpdateBancoTrabajo(BancoTrabajoId bancoTrabajoId, co.com.sofkau.training.ddd.reto.puestoTrabajo.values.NumeroBanco numeroBanco, Sector sector) {
+    public UpdateBancoTrabajoCommand(PuestoTrabajoId puestoTrabajoId, BancoTrabajoId bancoTrabajoId, co.com.sofkau.training.ddd.reto.puestoTrabajo.values.NumeroBanco numeroBanco, Sector sector) {
+        this.puestoTrabajoId = puestoTrabajoId;
         this.bancoTrabajoId = bancoTrabajoId;
-        NumeroBanco = numeroBanco;
+        this.numeroBanco = numeroBanco;
         this.sector = sector;
+    }
+
+    public PuestoTrabajoId getPuestoTrabajoId() {
+        return puestoTrabajoId;
     }
 
     public BancoTrabajoId getBancoTrabajoId() {
@@ -23,7 +28,7 @@ public class UpdateBancoTrabajo extends Command {
     }
 
     public co.com.sofkau.training.ddd.reto.puestoTrabajo.values.NumeroBanco getNumeroBanco() {
-        return NumeroBanco;
+        return numeroBanco;
     }
 
     public Sector getSector() {
