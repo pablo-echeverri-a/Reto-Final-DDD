@@ -9,6 +9,10 @@ public class Activo implements ValueObject<Boolean> {
         this.activo = activo;
     }
 
+    public static Activo of(Boolean activo){
+        return new Activo(activo);
+    }
+
     @Override
     public Boolean value() {
         return activo;
