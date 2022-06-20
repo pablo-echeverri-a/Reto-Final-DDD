@@ -41,10 +41,6 @@ public class Factura extends AggregateEvent<FacturaId> {
         appendChange(new UpdatedManoObra(manoObraId, horas, costo)).apply();
     }
 
-    public void changeEspecialidad(Especialidad especialidad){
-        appendChange(new ChangedEspecialidad(especialidad)).apply();
-    }
-
     public void addRepuesto(RepuestoFactory repuestoFactory){
         repuestoFactory.repuestos()
                 .forEach(repuesto ->

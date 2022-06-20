@@ -1,6 +1,8 @@
 package co.com.sofkau.training.ddd.reto.mecanico.events;
 
 import co.com.sofka.domain.generic.DomainEvent;
+import co.com.sofkau.training.ddd.reto.factura.identities.FacturaId;
+import co.com.sofkau.training.ddd.reto.mecanico.identities.MecanicoId;
 import co.com.sofkau.training.ddd.reto.mecanico.values.Especialidad;
 
 public class ChangedEspecialidad extends DomainEvent {

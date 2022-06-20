@@ -12,6 +12,7 @@ import co.com.sofkau.training.ddd.reto.factura.entities.Repuesto;
 import co.com.sofkau.training.ddd.reto.factura.events.CreatedFactura;
 import co.com.sofkau.training.ddd.reto.factura.events.RepuestoAdded;
 import co.com.sofkau.training.ddd.reto.factura.events.UpdatedManoObra;
+import co.com.sofkau.training.ddd.reto.factura.identities.ManoObraId;
 
 import java.util.ArrayList;
 
@@ -23,7 +24,7 @@ public class FacturaChange extends EventChange {
         });
 
         apply((UpdatedManoObra event)->{
-
+            factura.manoObra = new ManoObra(new ManoObraId());
             var manoObra = new ManoObra(event.getManoObraId(), event.getHoras(), event.getCosto());
 
             factura.manoObra.actualizarManoObra(manoObra);

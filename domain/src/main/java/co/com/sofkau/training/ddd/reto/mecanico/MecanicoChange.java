@@ -5,6 +5,7 @@ import co.com.sofkau.training.ddd.reto.mecanico.entities.Empleado;
 import co.com.sofkau.training.ddd.reto.mecanico.events.ChangedEspecialidad;
 import co.com.sofkau.training.ddd.reto.mecanico.events.CreatedMecanico;
 import co.com.sofkau.training.ddd.reto.mecanico.events.UpdatedEmpleado;
+import co.com.sofkau.training.ddd.reto.mecanico.identities.EmpleadoId;
 import co.com.sofkau.training.ddd.reto.mecanico.values.Especialidad;
 
 public class MecanicoChange extends EventChange {
@@ -16,7 +17,7 @@ public class MecanicoChange extends EventChange {
         });
 
         apply((UpdatedEmpleado event)->{
-
+            mecanico.empleado = new Empleado(new EmpleadoId());
             var empleadoId = event.getEmpleadoId();
             var empleado = new Empleado(empleadoId, event.getNombrePersona(), event.getDocumentoIdentidad(),
                     event.getActivo(), event.getCodigo());
@@ -25,7 +26,7 @@ public class MecanicoChange extends EventChange {
         });
 
         apply((ChangedEspecialidad event) -> {
-            mecanico.especialidad = event.getEspecialidad();
+            mecanico.especialidad = new Especialidad(event.getEspecialidad().value());
         });
 
     }

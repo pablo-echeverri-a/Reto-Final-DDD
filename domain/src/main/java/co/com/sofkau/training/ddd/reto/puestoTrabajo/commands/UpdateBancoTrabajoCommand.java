@@ -12,7 +12,7 @@ public class UpdateBancoTrabajoCommand extends Command {
     private final NumeroBanco numeroBanco;
     private final Sector sector;
 
-    public UpdateBancoTrabajoCommand(PuestoTrabajoId puestoTrabajoId, BancoTrabajoId bancoTrabajoId, co.com.sofkau.training.ddd.reto.puestoTrabajo.values.NumeroBanco numeroBanco, Sector sector) {
+    public UpdateBancoTrabajoCommand(PuestoTrabajoId puestoTrabajoId, BancoTrabajoId bancoTrabajoId, NumeroBanco numeroBanco, Sector sector) {
         this.puestoTrabajoId = puestoTrabajoId;
         this.bancoTrabajoId = bancoTrabajoId;
         this.numeroBanco = numeroBanco;

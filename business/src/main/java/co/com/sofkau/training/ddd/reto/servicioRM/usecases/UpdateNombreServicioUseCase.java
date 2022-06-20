@@ -3,8 +3,6 @@ package co.com.sofkau.training.ddd.reto.servicioRM.usecases;
 import co.com.sofka.business.generic.UseCase;
 import co.com.sofka.business.support.RequestCommand;
 import co.com.sofka.business.support.ResponseEvents;
-import co.com.sofkau.training.ddd.reto.puestoTrabajo.PuestoTrabajo;
-import co.com.sofkau.training.ddd.reto.puestoTrabajo.commands.UpdateBancoTrabajoCommand;
 import co.com.sofkau.training.ddd.reto.servicioRM.ServicioRM;
 import co.com.sofkau.training.ddd.reto.servicioRM.commands.UpdateNombreServicioCommand;
 
