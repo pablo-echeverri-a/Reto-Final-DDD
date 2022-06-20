@@ -13,10 +13,12 @@ import co.com.sofkau.training.ddd.reto.factura.events.CreatedFactura;
 import co.com.sofkau.training.ddd.reto.factura.events.RepuestoAdded;
 import co.com.sofkau.training.ddd.reto.factura.events.UpdatedManoObra;
 
+import java.util.ArrayList;
+
 public class FacturaChange extends EventChange {
     public FacturaChange(Factura factura){
         apply((CreatedFactura event) -> {
-            factura.repuestos = null;
+            factura.repuestos = new ArrayList<>();
             factura.manoObra = new ManoObra(event.getManoObraId(), event.getHoras(), event.getCosto());
         });
 

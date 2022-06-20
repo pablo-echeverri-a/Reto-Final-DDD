@@ -7,10 +7,12 @@ import co.com.sofkau.training.ddd.reto.puestoTrabajo.events.CreatedPuestoTrabajo
 import co.com.sofkau.training.ddd.reto.puestoTrabajo.events.HerramientaAdded;
 import co.com.sofkau.training.ddd.reto.puestoTrabajo.events.UpdatedBancoTrabajo;
 
+import java.util.ArrayList;
+
 public class PuestoTrabajoChange extends EventChange {
     public PuestoTrabajoChange(PuestoTrabajo puestoTrabajo){
         apply((CreatedPuestoTrabajo event) -> {
-            puestoTrabajo.herramientas = null;
+            puestoTrabajo.herramientas = new ArrayList<>();
             puestoTrabajo.bancoTrabajo = new BancoTrabajo(event.getBancoTrabajoId(), event.getNumeroBanco(),
                     event.getSector());
         });

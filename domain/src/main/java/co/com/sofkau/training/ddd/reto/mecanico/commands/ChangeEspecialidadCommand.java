@@ -4,11 +4,11 @@ import co.com.sofka.domain.generic.Command;
 import co.com.sofkau.training.ddd.reto.mecanico.identities.MecanicoId;
 import co.com.sofkau.training.ddd.reto.mecanico.values.Especialidad;
 
-public class ChangedEspecialidadCommand extends Command {
+public class ChangeEspecialidadCommand extends Command {
     private final MecanicoId mecanicoId;
     private final Especialidad especialidad;
 
-    public ChangedEspecialidadCommand(MecanicoId mecanicoId, Especialidad especialidad) {
+    public ChangeEspecialidadCommand(MecanicoId mecanicoId, Especialidad especialidad) {
         this.mecanicoId = mecanicoId;
         this.especialidad = especialidad;
     }
